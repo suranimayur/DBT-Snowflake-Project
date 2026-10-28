@@ -8,7 +8,7 @@ with cte as (
     MONTH(  TO_TIMESTAMP(started_at)) AS MONTH,
     {{get_season('STARTED_AT')}} AS STATUS_OF_YEAR
     from 
-    {{ source('demo', 'bike') }}
+    {{ ref("stg_bike") }}
     where started_at != 'started_at'
 )
 select * from 
