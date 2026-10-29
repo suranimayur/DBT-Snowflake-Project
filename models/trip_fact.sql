@@ -1,3 +1,6 @@
+
+{{ config(materialized='table') }}
+
 with trips as (
     select
     RIDE_ID,
